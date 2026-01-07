@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳｜豐收於口</title>
+
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/member_related.css">
+
+    <script src="../assets/js/lang_data.js"></script>
+    <script src="../assets/js/lang.js"></script>
+    <script src="../assets/js/ProInfscript.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html">豐收於口 Harvest Bite</a></h1>
+                <p><span class="i18n">健康糕餅</span></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="menu.html" class="i18n">產品資訊</a></li>
+                    <li><a href="faq.html" class="i18n">常見問題</a></li>
+                    <li><a href="login.html" class="i18n">會員中心</a></li>
+                    <li><a id="lang_switch" href="">English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid" style="gap:18px;">
+        <h2 class="section-title"><span class="i18n">結帳</span></h2>
+        <div class="card">
+        <form id="profileForm" class="grid">
+            <div>
+            <label for="editName" class="i18n">姓名</label>
+            <input id="editName" type="text" placeholder="姓名 Name" />
+            </div>
+            <div class="grid two">
+            <div>
+                <label for="editPhone" class="i18n">手機</label>
+                <input id="editPhone" type="tel" placeholder="09xx-xxx-xxx" />
+            </div>
+            <div>
+                <label for="editAddress" class="i18n">地址</label>
+                <input id="editAddress" type="text" placeholder="地址 Address" />
+            </div>
+            </div>
+            <div>
+                <label for="editpayment" class="i18n">付款方式</label><br>
+                <select id="method" class="payment">
+                        <option class="i18n">信用卡付款</option>
+                        <option class="i18n">現金貨到付款</option>
+                        <option class="i18n">ATM轉帳匯款</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="actions">
+            <button class="btn"><span class="i18n" onclick="alert('結帳成功，感謝您的購買\nCheckout Successful, thanks for shopping')">確認結帳</span></button>
+            </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count" id="cart-count">0</span></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3 class="i18n">您的購物車</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div id="cart-items"></div>
+        
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>豐收於口 Harvest Bite</h3>
+                    <p><span class="i18n">帶給您健康的甜點體驗</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">快速連結</h3>
+                    <ul>
+                        <li><a href="../index.html#home" class="i18n">回首頁</a></li>
+                        <li><a href="../index.html#about" class="i18n">關於我們</a></li>
+                        <li><a href="../index.html#hot" class="i18n">熱銷產品</a></li>
+                        <li><a href="../index.html#contact" class="i18n">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">訂閱電子報</h3>
+                    <p><span class="i18n">獲取最新的產品與優惠資訊。</span></p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="您的電子郵件 Your Mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
+        </div>
+    </footer>
+
+    <script>
+        const u = getCurrentUser();
+
+        if (!u) {
+            alert("請先登入後再結帳\nPlease Log In First before Checkout.");
+            requireLogin(); 
+        } else {
+            document.getElementById("editName").value = u.name || "";
+            document.getElementById("editPhone").value = u.phone || "";
+            document.getElementById("editAddress").value = u.address || "";
+        }
+
+        document.getElementById("profileForm").addEventListener("submit", updateProfileSubmit);
+        
+    </script>
+</body>
+</html>

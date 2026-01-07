@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}        
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('assets/image/bg.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.advertisement {
+    background-color: #ffe2bd;
+}
+
+.contact {
+    background-color: var(--light-color);
+}
+
+/*Added Styles*/
+header .container-second {
+    background: rgb(247, 206, 154);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container-second nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+
+
+.container-second nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.container-second nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.container-second nav ul li a:hover::after {
+    width: 100%;
+}
+
+.container-second nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.about, .hot {
+    background: var(--lighter-color);
+}
+
+
+
+
+
+
+/*End*/
+
+
+body {            
+    margin: 0px;
+}
+
+.slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: 0px auto;
+}
+
+/*按鍵設計*/
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 20px;
+    width: auto;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3); /*自己加的感覺比較好看*/
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 3px;
+
+    transition: 0.3s ease;
+}
+
+.next {
+    right: 0px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*照片動畫*/
+.mySlides {
+    animation: fade;
+    animation-duration: 0.3s;
+}
+@keyframes fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/*圓點*/
+.dot {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    margin: 0px 2px;
+    border-radius: 50%;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}

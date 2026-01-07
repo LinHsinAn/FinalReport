@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁｜豐收於口</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/homepage.css">
+
+    <script src="assets/js/lang_data.js"></script>
+    <script src="assets/js/lang.js"></script>
+    
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">豐收於口 Harvest Bite</a></h1>
+                <p><span class="i18n">健康糕餅</span></p>
+            </div>
+            <nav>
+                <ul>
+
+                    <li><a href="pages/menu.html" class="i18n">產品資訊</a></li>
+                    <li><a href="pages/faq.html" class="i18n">常見問題</a></li>
+                    <li><a href="pages/login.html" class="i18n">會員中心</a></li>
+                    <li><a id="lang_switch" href="">English</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-second">
+            <nav>
+                <ul>
+                    <li><a href="#home" class="i18n">回最上層</a></li>
+                    <li><a href="#about" class="i18n">關於我們</a></li>
+                    <li><a href="#hot" class="i18n">熱銷產品</a></li>
+                    <li><a href="#contact" class="i18n">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id="home" class="hero" style="background: url('assets/image/bg.jpg') no-repeat center center/cover;">
+        <div class="hero-content">
+            <h2 class="i18n">用心烘焙，傳遞純粹的幸福</h2>
+            <p><span class="highlight i18n">低糖烘焙 • 天然食材 • 無負擔的甜美</span> - <span class="i18n">限量供應！</span></p>
+            <a href="pages/menu.html" class="btn i18n">立即選購</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <script src="js/slideshow.js"></script> <!--不能刪-->
+
+    <section class="advertisement">
+        <div class="slideshow-container">
+            <div class="mySlides">          
+            <a  href="pages/products/sun_cake.html"><img src="assets/image/P1.jpg" style="width:100%"></a>          
+            </div>
+        
+            <div class="mySlides">          
+            <a  href="pages/products/sun_cake.html"><img src="assets/image/P2.jpg" style="width:100%"></a>          
+            </div>
+        
+            <div class="mySlides">         
+            <a  href="pages/products/sun_cake.html"><img src="assets/image/P3.jpg"style="width:100%"></a>          
+            </div>
+
+            <!--左右按鈕-->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>      
+        
+        <!--顯示圓點-->
+        <div style="text-align: center;">
+        <span class="dot" onclick="currentSlides(0)"></span>
+        <span class="dot" onclick="currentSlides(1)"></span>
+        <span class="dot" onclick="currentSlides(2)"></span>
+        </div>
+    </section>
+
+    <script src="assets/js/slideshow.js"></script>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title i18n">關於 Harvest Bite</h2>
+                <p><span class="i18n">在豐收於口，我們相信享受甜點應該是一件身心愉悅且毫無負擔的事。</span></p>
+                <p><span class="i18n">我們選用天然食材，並堅持低糖、低油的烘焙原則，重新詮釋傳統點心。</span><span class="i18n">每一口都是我們用心烘焙的溫度，只為給您最安心的美味。</span></p>
+                <br><a href="pages/thoughts.html" class="buy-btn i18n" style="margin-top: 5%;">組員心得</a>
+                <div class="stats">
+                    <div class="stat"></div>
+                    <div class="stat"></div>
+                    <div class="stat"></div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/image/about.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section id="hot" class="hot">
+        <div class="container">
+            <h2 class="section-title i18n">熱銷產品</h2>
+            <div class="shop-container">
+                <div class="product">
+                    <a href="pages/products/pineapple_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="assets/image/pineapple_cake.png" alt="鳳梨酥">
+                        <h3 class="i18n">鳳梨酥</h3>
+                    </a>
+                    <button class="buy-btn i18n">查看更多</button>
+                </div>
+
+                <div class="product">
+                    <a href="pages/products/sun_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="assets/image/sun_cake.png" alt="太陽餅">
+                        <h3 class="i18n">太陽餅</h3>
+                    </a>
+                    <button class="buy-btn i18n">查看更多</button>
+                </div>
+
+                <div class="product">
+                    <a href="pages/products/sweetheart_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="assets/image/sweetheart_cake.png">
+                        <h3 class="i18n">老婆餅</h3>
+                    </a>
+                    <button class="buy-btn i18n">查看更多</button>
+                </div>
+                
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title i18n">聯絡我們</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="i18n">聯絡資訊</h3>
+                    <p><i class="fas fa-phone"></i> (886) 9867-1234</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span class="i18n">桃園市中壢區中北路 200 號</span></p>                    
+                    <p><i class="fas fa-envelope"></i> info@harvestbite.com</p>
+                    <div>
+                        <a class="buy-btn" href="https://www.facebook.com/CYCU.PR/" target="_blank" >Facebook</a>
+                        <a class="buy-btn" href="https://www.instagram.com/cycu_tw/" target="_blank" >Instagram</a>
+                        <a class="buy-btn" href="https://www.youtube.com/@prcycu3089" target="_blank" >Youtube</a>
+                    </div>
+
+                </div>
+                <div class="contact-form">
+                    <h3 class="i18n">留言給我們</h3>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="您的姓名 Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="您的電子郵件 Your Mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="您想說的話 Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn"><span class="i18n">發送訊息</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>豐收於口 Harvest Bite</h3>
+                    <p><span class="i18n">帶給您健康的甜點體驗</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">快速連結</h3>
+                    <ul>
+                        <li><a href="#home" class="i18n">回首頁</a></li>
+                        <li><a href="#about" class="i18n">關於我們</a></li>
+                        <li><a href="#hot" class="i18n">熱銷產品</a></li>
+                        <li><a href="#contact" class="i18n">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">訂閱電子報</h3>
+                    <p><span class="i18n">獲取最新的產品與優惠資訊。</span></p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="您的電子郵件 Your Mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

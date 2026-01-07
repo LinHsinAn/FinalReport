@@ -1,0 +1,106 @@
+
+/*header {background:#fff; border-bottom:1px solid #eee;}*/
+/*.container {
+    max-width:1080px; margin:0 auto; padding:16px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}*/
+/*
+.logo h1{
+    margin:0; font-size:20px;
+}
+.logo p{margin:4px 0 0; opacity:.75;
+}*/
+/*
+nav ul {
+    list-style:none; display:flex; gap:14px; padding:0; margin:0; flex-wrap:wrap;
+}
+nav a {
+    text-decoration:none; color:#111; opacity:.85;
+}
+nav a:hover {
+    opacity:1;
+}
+
+main {
+    max-width: 1080px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+
+.card{
+    background:#fff; border:1px solid #eee; border-radius:14px; padding:18px; box-shadow:0 4px 18px rgba(0,0,0,.04);
+}
+.title{margin:0 0 12px; font-size:22px;
+}
+*/
+body {
+    background: var(--light-color);
+}
+.section-title {
+    padding-top: 13.25%;
+
+}
+main {
+
+    max-width: 1080px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin: auto;
+    padding: 0 16px; 
+    padding-bottom: 5%;
+}
+
+.muted{
+    opacity:.75; 
+    font-size:14px; 
+    padding-bottom: 1%;
+    margin:6px 0 0;
+}
+/*
+.grid{display:grid; gap:14px;
+}
+.grid.two{grid-template-columns:1fr;
+}*/
+
+
+@media
+(min-width: 800px) { 
+    .grid.two {grid-template-columns:1fr 1fr;} 
+}
+label{
+    font-size:14px; opacity:.85;
+}
+input, textarea{
+    width:100%; padding:10px 12px; border-radius:12px; border:1px solid #ddd; outline:none; background:#fff; box-sizing:border-box;
+}
+input:focus, textarea:focus{
+    border-color:#bbb;
+}
+.btn{
+    cursor:pointer; border:0; border-radius:999px; padding:10px 16px; background:#111; color:#fff; font-weight:600;
+}
+.btn.secondary{
+    background:#fff; color:#111; border:1px solid #ddd;
+}
+.actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    padding-bottom: 3%;
+
+}
+.hint{
+    font-size:13px; opacity:.75; margin-top:10px;
+}
+
+/*footer{
+max-width:1080px; margin:24px auto 40px; padding:0 16px; opacity:.7; font-size:13px;
+}*/
+
+.kv{
+    display:grid; grid-template-columns:120px 1fr; gap:8px 12px; margin-top:10px;
+}
+.pill{
+    display:inline-block; padding:4px 10px; border-radius:999px; background:#f2f2f2; font-size:12px; margin-left:8px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>會員註冊｜豐收於口 Harvest Bite</title>
+  
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/member_related.css">
+
+  <script src="../assets/js/lang_data.js"></script>
+  <script src="../assets/js/lang.js"></script>
+  <script src="../assets/js/auth.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html">豐收於口 Harvest Bite</a></h1>
+                <p><span class="i18n">健康糕餅</span></p>
+            </div>
+            <nav>
+                <ul>
+
+                    <li><a href="menu.html" class="i18n">產品資訊</a></li>
+                    <li><a href="faq.html" class="i18n">常見問題</a></li>
+                    <li><a href="login.html" class="i18n">會員中心</a></li>
+                    <li><a id="lang_switch" href="">English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <main>
+    <div class="card">
+      <h2 class="section-title i18n">會員註冊 </h2>
+      <p class="muted"> <span class="i18n">填寫資料後即可建立帳號。</span></p>
+
+      <form id="registerForm" class="grid" autocomplete="on">
+        <div class="grid two">
+          <div>
+            <label for="name">姓名 *</label>
+            <input id="name" name="name" type="text" placeholder="Ex：王小明" required />
+          </div>
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div>
+            <label for="password"><span class="i18n">密碼 *</span></label>
+            <input id="password" name="password" type="password" placeholder="至少 6 碼 At least 6 degits" minlength="6" required />
+          </div>
+          <div>
+            <label for="phone"><span class="i18n">手機</span></label>
+            <input id="phone" name="phone" type="tel" placeholder="09xx-xxx-xxx" />
+          </div>
+        </div>
+
+        <div>
+          <label for="address"><span class="i18n">地址</span></label>
+          <input id="address" name="address" type="text" placeholder="Ex：桃園市中壢區..." />
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit"><span class="i18n">建立帳號</span></button>
+          <a class="btn secondary" href="login.html" style="text-decoration:none; display:inline-flex; align-items:center;"><span class="i18n">已有帳號？去登入</span></a>
+        </div>
+
+        <div class="hint i18n">提示： * : 必填</div>
+      </form>
+    </div>
+  </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>豐收於口 Harvest Bite</h3>
+                    <p><span class="i18n">帶給您健康的甜點體驗</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">快速連結</h3>
+                    <ul>
+                        <li><a href="../index.html#home" class="i18n">回首頁</a></li>
+                        <li><a href="../index.html#about" class="i18n">關於我們</a></li>
+                        <li><a href="../index.html#hot" class="i18n">熱銷產品</a></li>
+                        <li><a href="../index.html#contact" class="i18n">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">訂閱電子報</h3>
+                    <p><span class="i18n">獲取最新的產品與優惠資訊。</span></p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="您的電子郵件 Your Mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
+        </div>
+    </footer>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", registerSubmit);
+  </script>
+</body>
+</html>

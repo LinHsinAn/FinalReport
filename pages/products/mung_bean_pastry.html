@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest Bite</title>
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/products.css">
+
+
+    <script src="../../assets/js/lang_data.js"></script>
+    <script src="../../assets/js/lang.js"></script>
+    <script src="../../assets/js/ProInfscript.js"></script>
+</head>
+<body class="bg">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../../index.html">豐收於口 Harvest Bite</a></h1>
+                <p><span class="i18n">健康糕餅</span></p>
+            </div>
+            <nav>
+                <ul>
+
+                    <li><a href="../menu.html" class="i18n">產品資訊</a></li>
+                    <li><a href="../faq.html" class="i18n">常見問題</a></li>
+                    <li><a href="../login.html" class="i18n">會員中心</a></li>
+                    <li><a id="lang_switch" href="">English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div style="height: 80px; width: 100%;"></div>
+
+    <main class="detail-page-wrapper">
+        <div class="detail-main-card">
+            <div class="detail-image-box">
+                <img src="../../assets/image/mung_bean_pastry.png" alt="綠豆椪">
+            </div>
+
+            <div class="detail-info-box">
+                <h2 class="detail-title i18n">綠豆椪</h2>
+                <div class="detail-price i18n">$450/ 6入</div>
+                <p style="color: #666; line-height: 1.8;" class="i18n">
+                    表皮是由油酥與油皮反覆摺疊擀製而成，外觀呈現白色、層次分明，核心內餡是經過洗沙、去殼、磨粉、慢火熬煮的綠豆仁沙，傳統做法會加入豬油與糖拌炒，口感綿密滑順。
+                </p>
+
+                <div class="qty-selector">
+                    <span class="i18n">數量：</span>
+                    <button onclick="changeQty(-1)">-</button>
+                    <input type="number" id="buy-qty" value="1" readonly>
+                    <button onclick="changeQty(1)">+</button>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-cart i18n" onclick="addToCart('綠豆椪 Mung Bean Pastry', 450, 'mung_bean_pastry.png')">加入購物車</button>
+                    <a href="../checkout.html"><button class="btn-buy-now i18n">直接購買</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link-container">
+            <a href="../menu.html" class="back-link-bottom i18n">回上一頁</a>
+        </div>
+
+    </main>
+
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count" id="cart-count">0</span></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3 class="i18n">您的購物車</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+            <a class="buy-btn i18n" href="../checkout.html" style="position: absolute; bottom: 3%; width: 90%;" >結帳</a>
+        </div>
+        <div id="cart-items"></div>
+    </div>
+    <script src="../../assets/js/ProInfscript.js"></script>
+
+        <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>豐收於口 Harvest Bite</h3>
+                    <p><span class="i18n">帶給您健康的甜點體驗</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">快速連結</h3>
+                    <ul>
+                        <li><a href="../../index.html#home" class="i18n">回首頁</a></li>
+                        <li><a href="../../index.html#about" class="i18n">關於我們</a></li>
+                        <li><a href="../../index.html#hot" class="i18n">熱銷產品</a></li>
+                        <li><a href="../../index.html#contact" class="i18n">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">訂閱電子報</h3>
+                    <p><span class="i18n">獲取最新的產品與優惠資訊。</span></p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="您的電子郵件 Your Mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
+        </div>
+    </footer>
+</body>
+</html>

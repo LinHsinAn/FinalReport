@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜單｜豐收於口</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    
+    <script src="../assets/js/HomeScript.js"></script>
+
+    <script src="../assets/js/lang_data.js"></script>
+    <script src="../assets/js/lang.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html">豐收於口 Harvest Bite</a></h1>
+                <p><span class="i18n">健康糕餅</span></p>
+            </div>
+            <nav>
+                <ul>
+
+                    <li><a href="menu.html" class="i18n">產品資訊</a></li>
+                    <li><a href="faq.html" class="i18n">常見問題</a></li>
+                    <li><a href="login.html" class="i18n">會員中心</a></li>
+                    <li><a id="lang_switch" href="">English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="shop">
+        <div class="container">
+            <h2 class="section-title i18n" style="padding-top: 5%;">產品資訊</h2>
+            <div class="shop-container">
+                <div class="product">
+                    <a href="products/pineapple_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/pineapple_cake.png" alt="鳳梨酥">
+                        <h3 class="i18n">鳳梨酥</h3>
+                    </a>
+                    <p><span class="i18n">$300/10入</span></p>
+                    <p><span class="i18n">★4.7　145則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('鳳梨酥 Pinapple Cake', 300, 'pineapple_cake.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/pineapple_and_yolk_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/pineapple_and_yolk_cake.png" alt="鳳凰酥">
+                        <h3 class="i18n">鳳凰酥</h3>
+                    </a>
+                    <p><span class="i18n">$350/10入</span></p>
+                    <p><span class="i18n">★4.8　325則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('鳳凰酥 PineappleYolk Cake', 350, 'pineapple_and_yolk_cake.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/yolk_pastry.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/yolk_pastry.png">
+                        <h3 class="i18n">蛋黃酥</h3>
+                    </a>
+                    <p><span class="i18n">$600/10入</span></p>
+                    <p>★4.9　<span class="i18n">525則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('蛋黃酥 Yolk Pastry', 600, 'yolk_pastry.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/sun_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/sun_cake.png">
+                        <h3 class="i18n">太陽餅</h3>
+                    </a>
+                    <p><span class="i18n">$600/12入</span></p>
+                    <p>★4.7　<span class="i18n">292則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('太陽餅 Sun Cake', 600, 'sun_cake.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/mung_bean_pastry.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/mung_bean_pastry.png">
+                        <h3 class="i18n">綠豆椪</h3>
+                    </a>
+                    <p><span class="i18n">$450/6入</span></p>
+                    <p>★4.6　<span class="i18n">128則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('綠豆椪 Mung Bean Pastry', 450, '5.jpg')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/ox-tongue_biscuit.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/ox-tongue_biscuit.png">
+                        <h3 class="i18n">牛舌餅</h3>
+                    </a>
+                    <p><span class="i18n">$350/10入</span></p>
+                    <p>★4.7　<span class="i18n">294則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('牛舌餅 Ox-tongue Biscuit', 350, 'ox-tongue_biscuit.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+                <div class="product">
+                    <a href="products/red_bean_q_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/red_bean_q_cake.png">
+                        <h3 class="i18n">紅豆Q餅</h3>
+                    </a>
+                    <p><span class="i18n">$240/5入</span></p>
+                    <p>★4.9　<span class="i18n">488則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('紅豆Q餅 Red Bean Q Cake', 240, 'red_bean_q_cake.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+
+                <div class="product">
+                    <a href="products/sweetheart_cake.html" style="text-decoration: none; color: inherit;">
+                        <img src="../assets/image/sweetheart_cake.png">
+                        <h3 class="i18n">老婆餅</h3>
+                    </a>
+                    <p><span class="i18n">$600/12入</span></p>
+                    <p>★4.5　<span class="i18n">366則評論</span></p>
+                    <button class="buy-btn" onclick="addToCart('老婆餅 Sweetheart Cake', 600, 'sweetheart_cake.png')"><span class="i18n">加入購物車</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count" id="cart-count">0</span></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3 class="i18n">您的購物車</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div id="cart-items"></div>
+        <a class="buy-btn i18n" href="checkout.html" style="position: absolute; bottom: 3%; width: 90%;" >結帳</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>豐收於口 Harvest Bite</h3>
+                    <p><span class="i18n">帶給您健康的甜點體驗</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">快速連結</h3>
+                    <ul>
+                        <li><a href="../index.html#home" class="i18n">回首頁</a></li>
+                        <li><a href="../index.html#about" class="i18n">關於我們</a></li>
+                        <li><a href="../index.html#hot" class="i18n">熱銷產品</a></li>
+                        <li><a href="../index.html#contact" class="i18n">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="i18n">訂閱電子報</h3>
+                    <p><span class="i18n">獲取最新的產品與優惠資訊。</span></p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="您的電子郵件 Your Mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
