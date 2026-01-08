@@ -4,6 +4,9 @@ function runI18n() {
     replace("信用卡付款", "Credit Card");
     replace("現金貨到付款", "Cash on Delivery (COD)");
     replace("ATM轉帳匯款", "ATM transfer");
+    replace("訂單摘要", "Order Summary");
+    replace("總計：", "Total:&nbsp");
+    replace("歷史訂單紀錄", "History Orders")
 
     //首頁 HomePage 
     replace("健康糕餅", "Healthy Pastries");
