@@ -290,6 +290,7 @@ nav ul li a:hover {
 }
 
 .buy-btn {
+    text-decoration: unset;
     background-color: var(--shop);
     color: white;
     padding: 10px;
