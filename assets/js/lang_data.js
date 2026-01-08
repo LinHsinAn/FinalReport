@@ -96,7 +96,7 @@ function runI18n() {
     replace("是否可以換貨？", "Can I exchange the product?");
     replace("因衛生問題，若產品已拆封、食用、外盒受損、失溫或因消費者保存不當變質等，恕不接受退換貨。除商品本身有瑕疵可退換貨、訂購的商品不符外，其餘情形恕無法辦理退換貨。", "Due to hygiene concerns, returns and exchanges are not accepted if the product has been opened, consumed, has damaged packaging, has lost temperature, or has spoiled due to improper storage by the consumer. Returns and exchanges are not possible except for cases of product defects or discrepancies between the ordered and received items.");
     replace("如何付款？" ,"How to pay for the product?");
-    replace("本店可使用「現金」、「線上刷卡」與「ATM轉帳匯款」。僅接受一次付清，不接受分期付款。", "We accept cash, online credit card, and ATM transfer. We only accept full payment upfront; installment payments are not accepted.")
+    replace("本店可使用「現金」、「線上刷卡」與「ATM轉帳匯款」。僅接受一次付清，不接受分期付款。", "We accept cash, online credit card, and ATM transfer. We only accept full payment upfront; installment payments are not accepted.");
     replace("如何加入會員？", "How do I become a member?");
     replace("註冊會員可使用「電話」、「電子郵件」、「LINE」、「FB」等4種註冊方式。", "Members can register using four methods: phone, email, LINE, and Facebook.");
 
@@ -132,6 +132,7 @@ function runI18n() {
     replace("數量：", "Number: ");
     replace("回上一頁", "prev");
     replace("結帳", "Checkout");
+	replace("本店可使用「現金」、「線上刷卡」與「ATM transfer」。僅接受一次付清，不接受分期Payment。", "We accept cash, online credit card, and ATM transfer. We only accept full payment upfront; installment payments are not accepted.");
     
     
     
