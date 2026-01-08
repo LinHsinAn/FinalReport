@@ -25,7 +25,7 @@ function runI18n() {
     replace("在豐收於口，我們相信享受甜點應該是一件身心愉悅且毫無負擔的事。", "At Harvest Bite, we believe that enjoying pastries should feel good in every way.");
     replace("我們選用天然食材，並堅持低糖、低油的烘焙原則，重新詮釋傳統點心。", "By using natural ingredients and reducing sugar and oil, we reimagine traditional pastries in a healthier, more balanced way. ");
     replace("每一口都是我們用心烘焙的溫度，只為給您最安心的美味。", "Each bite is carefully baked to deliver warmth, flavor, and peace of mind.");
-    replace("組員心得", "Thoughts")
+    replace("成員介紹", "Group Members")
     
     replace("查看更多", "Check More");
 
@@ -98,7 +98,7 @@ function runI18n() {
     replace("如何付款？" ,"How to pay for the product?");
     replace("本店可使用「現金」、「線上刷卡」與「ATM轉帳匯款」。僅接受一次付清，不接受分期付款。", "We accept cash, online credit card, and ATM transfer. We only accept full payment upfront; installment payments are not accepted.");
     replace("如何加入會員？", "How do I become a member?");
-    replace("註冊會員可使用「電話」、「電子郵件」、「LINE」、「FB」等4種註冊方式。", "Members can register using four methods: phone, email, LINE, and Facebook.");
+    replace("註冊會員可使用「電話」、「電子郵件」等註冊方式。", "Members can register using these methods: phone and email, etc..");
 
     
 
