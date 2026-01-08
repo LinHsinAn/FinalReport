@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
     
-    hamburger.addEventListener('click', function() {
+    /*hamburger.addEventListener('click', function() {
         this.classList.toggle('active');
         navMenu.classList.toggle('active');
-    });
+    });*/
+
+    InitialCart();
     
     // Close mobile menu when clicking a link
     document.querySelectorAll('nav ul li a').forEach(link => {
@@ -20,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         header.classList.toggle('scrolled', window.scrollY > 50);
+
+        const countElem = document.getElementById('cart-count');
+        if (countElem)
+             countElem.textContent = cart.length;
+        updateCart();
     });
     
     // Smooth scrolling for anchor links
@@ -41,8 +48,41 @@ document.addEventListener('DOMContentLoaded', function() {
           
 });
 
-let cart = [];
-let cartCount = 0;
+
+let cart = loadCart();
+let cartCount = cart.length;
+
+
+//儲存購物車內的內容  //localStorage 又是你
+function saveCart() {
+    const cartString = cart.map(item => `${item.name}|${item.price}|${item.image}`).join('＊');
+    localStorage.setItem('Cart', cartString);
+}
+//載入購物車的內容
+function loadCart() {
+    const wholecart = localStorage.getItem('Cart');
+    if (!wholecart)
+         return [];
+
+    return wholecart.split('＊').map(itemStr => {
+        const parts = itemStr.split('|');   
+        return {
+            name: parts[0],
+            price: parts[1],
+            image: parts[2]
+        };
+    });
+}
+
+//進網頁後把購物車裡該有的內容更新出來
+function InitialCart() {
+    const count = document.getElementById('cart-count');
+    if (count) {
+        count.textContent = cart.length; 
+    }
+    updateCart(); 
+}
+
 
 //加減產品頁面的購買數量 
 function changeQty(n) {
@@ -54,7 +94,7 @@ function changeQty(n) {
     }
 }
 
-// 加入購物車
+//加入購物車
 function addToCart(name, price, image) {
     let qtyInput = document.getElementById('buy-qty');
     let qty = qtyInput ? parseInt(qtyInput.value) : 1;
@@ -64,6 +104,8 @@ function addToCart(name, price, image) {
         cartCount++;
     }
     
+    saveCart(cart);
+
     document.getElementById('cart-count').textContent = cartCount;
     updateCart();
     document.getElementById('cart-panel').classList.add('open');
@@ -76,7 +118,10 @@ function removeFromCart(name) {
 
     if (index !== -1) {
         cart.splice(index, 1);
+
         cartCount--;
+        saveCart(cart);
+
         document.getElementById('cart-count').textContent = cartCount;
         updateCart();
     }
@@ -103,7 +148,7 @@ function updateCart() {
                         <div style="color: #666; font-size: 0.9em;">$${item.price} x ${item.qty}</div>
                     </div>
                 </div>
-                <button onclick="removeFromCart('${item.name}')" style="color: #ff4d4f; border: none; background: none; cursor: pointer; font-size: 16px;"><span class="i18n"> 移除 </span></button>
+                <button onclick="removeFromCart('${item.name}')" style="color: #ff4d4f; border: none; background: none; cursor: pointer; font-size: 24px;"><span class="i18n"> 🗑︎ </span></button>
             </div>
         `;
     });
