@@ -6,6 +6,9 @@ function renderOrderHistory() {
 
     const rawHistory = localStorage.getItem("OrderHistory");
     const container = document.getElementById("order-items-list");
+
+    const reviewedData = localStorage.getItem("ReviewedProducts") || "";
+    const reviewedList = reviewedData.split(',');
     
     if (!container) return;
 
@@ -43,13 +46,23 @@ function renderOrderHistory() {
         let orderItemsHTML = '';
         Object.values(combined).forEach(item => {
             const subtotal = item.price * item.qty; 
+            const isReviewed = reviewedList.includes(item.name);
+            const btnText = isReviewed ? "已評論 Rated" : "評論 Rate";
+            const btnColor = isReviewed ? "#bdc3c7" : "var(--accent-color)";
+
             orderItemsHTML += `
                 <div class="order-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dotted #eee;">
                     <div style="display: flex; align-items: center;">
                         <img src="../assets/image/${item.image}" style="width: 45px; height: 45px; object-fit: cover; margin-right: 12px; border-radius: 4px; border: 1px solid #eee;">
                         <div>
                             <div style="font-weight: bold; color: #333;">${item.name}</div>
-                            <div style="color: #777; font-size: 0.85em;">$${item.price} x ${item.qty}</div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="color: #777; font-size: 0.85em;">$${item.price} x ${item.qty}</span>
+                                <a href="products/${item.image.replace('.png', '.html')}#comment" 
+                                   style="display: inline-block; padding: 2px 8px; font-size: 11px; color: #fff; background-color: ${btnColor}; border-radius: 4px; text-decoration: none;">
+                                   ${btnText}
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div style="font-weight: bold; color: #444;">$${subtotal}</div>

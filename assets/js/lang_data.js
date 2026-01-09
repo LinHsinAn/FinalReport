@@ -8,6 +8,8 @@ function runI18n() {
     replace("總計：", "Total:&nbsp");
     replace("歷史訂單紀錄", "History Orders")
 
+    
+
     //首頁 HomePage 
     replace("健康糕餅", "Healthy Pastries");
     
@@ -137,7 +139,11 @@ function runI18n() {
     replace("結帳", "Checkout");
 	replace("本店可使用「現金」、「線上刷卡」與「ATM transfer」。僅接受一次付清，不接受分期Payment。", "We accept cash, online credit card, and ATM transfer. We only accept full payment upfront; installment payments are not accepted.");
     
-    
+    replace("撰寫您的評論", "Write Down Your Comment");
+    replace("熱門評論", "Top Comments");
+    replace("商品評論", "Comment Stat");
+    replace("送出", "Send");
+    replace("則評論", "Comments")
     
 
     if (ls.lang == "en") {

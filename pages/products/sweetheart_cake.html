@@ -12,6 +12,8 @@
     <script src="../../assets/js/lang_data.js"></script>
     <script src="../../assets/js/lang.js"></script>
     <script src="../../assets/js/ProInfscript.js"></script>
+
+    <script src="../../assets/js/auth.js"></script>
 </head>
 <body class="bg">
 
@@ -68,6 +70,53 @@
 
     </main>
 
+    <section class="comment-page-wrapper" id="comment">
+        <div class="detail-main-card" style="display: flex; flex-direction: column; gap: 20px; padding: 40px;">
+            <h2 class="detail-title i18n ">商品評論</h2>
+            <h2 style="color:#fbbc04; text-indent: 1em; margin-top: -3%;">★ 4.5</h2>
+            <h3 class="i18n" style="text-indent: 1em;  margin-top: -1%;">366 則評論</h3>
+
+            <h2 class="detail-title i18n" style="margin: 0; ">熱門評論</h2>
+            
+            <div id="my-comment-display" class="comment-item">
+            </div>  
+
+            <div id="my-comment-form" class="comment-item">
+                <h3 class="i18n" style="margin-bottom: 10px; font-size: 1.1em;">撰寫您的評論</h3>
+                
+                <div class="star-rating" style="font-size: 24px; cursor: pointer; margin-bottom: 10px;" id="star-input">
+                    <span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" id="my-comment-text" placeholder="分享你的評論 Share your comment" required></textarea>
+                </div>
+                
+                <button class="btn-buy-now i18n" onclick="submitComment()" style="width: auto; padding: 8px 25px;">送出</button>
+            </div>
+            
+
+            <div id="comment-list" style="display: flex; flex-direction: column; gap: 15px;">
+                
+                <div class="comment-item" >
+                    <h3 class="comment-title" >Owen OOO</h3>
+                    <h3 class="comment-title">★★★★☆</h3>
+                    <p class="comment-text">
+                        有點像太陽餅但更甜，還不錯。
+                    </p>
+                </div>
+                <div class="comment-item" >
+                    <h3 class="comment-title" >佩姬</h3>
+                    <h3 class="comment-title">★★★☆☆</h3>
+                    <p class="comment-text">
+                        有點太甜，喜歡甜的人可以試試。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <div class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count" id="cart-count">0</span></div>
     <div class="cart-panel" id="cart-panel">
         <div class="cart-header">
@@ -108,5 +157,9 @@
             <p>&copy; 2025 Harvest Bite. <span class="i18n">版權所有。</span></p>
         </div>
     </footer>
+
+    <script>
+        const CURRENT_PRODUCT_ID = "老婆餅 Sweetheart Cake";
+    </script>
 </body>
 </html>

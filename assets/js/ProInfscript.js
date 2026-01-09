@@ -1,10 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-        InitialCart();
+    InitialCart();
+
+    const stars = document.querySelectorAll('#star-input span');
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            currentRating = this.getAttribute('data-value');
+            Star();
+        });
+    });
+
+    renderLocalComments();
 });
 
 let cart = loadCart();
 let cartCount = cart.length;
 
+let currentRating = 5;
 
 //儲存購物車內的內容  //localStorage 又是你
 function saveCart() {
@@ -115,7 +126,100 @@ function updateCart() {
     document.getElementById('cart-items').innerHTML = cartHTML || '<p style="text-align:center; color:#999; margin-top:20px;"><span class="i18n">購物車是空的</span></p>';
 }
 
+function getProductName() {
+    return typeof CURRENT_PRODUCT_ID !== 'undefined' ? CURRENT_PRODUCT_ID : "DefaultProduct";
+}
+//用來對星星要幾顆 因為網頁已經有了span才能成
+function Star() {
+    const stars = document.querySelectorAll('#star-input span');
+    stars.forEach(star => {
+        if (star.getAttribute('data-value') <= currentRating) {
 
+            star.textContent = '★';
+        } else {
+            star.textContent = '☆';
+        }
+    });
+}
+//送出評論
+function submitComment() {
+    const text = document.getElementById('my-comment-text').value;
+    if (!text.trim()) {
+        alert("請輸入評論內容！\nPlease type in the comment content!");
+        return;
+    }
+    
+    const productName = getProductName();  //純粹為了確認是否有評論的 const (用於member那邊)
+    
+    localStorage.setItem(`CommentStar_${productName}`, currentRating);
+    localStorage.setItem(`CommentText_${productName}`, text);
+
+    let reviewed = localStorage.getItem("ReviewedProducts") || "";
+    if (!reviewed.split(',').includes(productName)) {
+        reviewed = (reviewed === "") ? productName : reviewed + "," + productName;
+        localStorage.setItem("ReviewedProducts", reviewed);
+    }
+
+    renderLocalComments();
+    alert("評論已儲存！\nComment saved!");
+}
+
+function renderLocalComments() {
+    const productName = getProductName();
+
+    const savedStar = localStorage.getItem(`CommentStar_${productName}`);
+    const savedText = localStorage.getItem(`CommentText_${productName}`);
+    
+    const formArea = document.getElementById('my-comment-form');
+    const displayArea = document.getElementById('my-comment-display');
+    
+    const user = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
+    const userName = user ? user.name : "You";
+
+    if (!displayArea || !formArea) 
+        return;
+
+    if (savedText) {
+        const starStr = '★'.repeat(savedStar) + '☆'.repeat(5 - savedStar);
+        displayArea.innerHTML = `
+            <div>
+                <h3 class="comment-title" >${userName}</h3>
+                <h3 class="comment-title">${starStr}</h3>
+                <p class="comment-text">
+                    ${savedText}
+                </p>
+                <br>
+                <button onclick="toggleCommentEdit(true)" style="postion: relative; right: 3%; background: var(--accent-color); color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer;">
+                    編輯 Edit
+                </button>
+            </div>
+        `;
+
+        displayArea.style.display = 'flex';
+        formArea.style.display = 'none';
+
+        const inputField = document.getElementById('my-comment-text');
+        if (inputField && !inputField.value) {
+            inputField.value = savedText;
+        }
+
+    } else {
+
+        displayArea.style.display = 'none';
+        formArea.style.display = 'block';
+    }
+}
+function toggleCommentEdit(show) {
+    const displayArea = document.getElementById('my-comment-display');
+    const formArea = document.getElementById('my-comment-form');
+    
+    if (show) {
+        displayArea.style.display = 'none';
+        formArea.style.display = 'block';
+    } else {
+        renderLocalComments();
+    }
+}
 
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
